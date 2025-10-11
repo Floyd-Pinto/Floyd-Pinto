@@ -12,6 +12,11 @@ jobs:
     permissions:
       contents: write
     steps:
+      - name: Install dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y docker.io jq
+      
       - uses: lowlighter/metrics@latest
         with:
           # Your GitHub token
@@ -25,10 +30,10 @@ jobs:
           token: ${{ secrets.METRICS_TOKEN }}
 
           # Options
-          user: ndleah
+          user: Floyd-Pinto
           template: classic
           base: header, activity, community, repositories, metadata
-          config_timezone: Australia/Sydney
+          config_timezone: Asia/Calcutta
           plugin_habits: yes
           plugin_habits_charts_type: chartist
           plugin_habits_days: 14
