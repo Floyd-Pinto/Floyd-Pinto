@@ -12,12 +12,7 @@ jobs:
     permissions:
       contents: write
     steps:
-      - name: Install dependencies
-        run: |
-          sudo apt-get update
-          sudo apt-get install -y docker.io jq
-      
-      - uses: lowlighter/metrics@latest
+      - uses: lowlighter/metrics@v3.34
         with:
           # Your GitHub token
           # The following scopes are required:
